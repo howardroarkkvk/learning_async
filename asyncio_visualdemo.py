@@ -9,7 +9,7 @@ async def make_request(i):
     print(f"Request {i} started at {time.time():.2f} should finish at ")
 
     async with httpx.AsyncClient() as client:
-        response= client.get(URL)
+        response= await client.get(URL)
 
     print(f"Request {i} finished at {time.time():.2f}")
     return response.json()
